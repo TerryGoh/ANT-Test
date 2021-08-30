@@ -1,25 +1,19 @@
 import logo from './logo.svg';
+//import './App.css';
+import SideMenuLayout from './components/SideMenuLayout'
+import { CustomTriggerMenu } from './components/CustomTriggerMenu'
+import React, { useState } from 'react';
 import './App.css';
-
+import { Layout, Avatar, Menu,  Breadcrumb, Button } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import SubMenu from 'antd/lib/menu/SubMenu';
+import Icon from '@ant-design/icons';
+import 'antd/dist/antd.css';
+const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <SideMenuLayout/>
+      );
 }
 
 export default App;
