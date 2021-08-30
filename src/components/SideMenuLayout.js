@@ -27,6 +27,22 @@ const handleClick = e => {
     console.log('click ', e);
 };
 
+const items = [
+    {
+        key: '1',
+        txt: 'Course Catalog',
+    },
+    {
+        key: '2',
+        txt: 'Course Categories',
+    },
+    {
+        key: '3',
+        txt: 'Learning Pathways',
+    },
+
+]
+
 const SideMenuLayout = () => {
     return (
         <Layout>
@@ -38,12 +54,18 @@ const SideMenuLayout = () => {
                     onClick={handleClick}
                     defaultSelectedKeys={['2']}
                 >
-                    <Menu.Item key="1">Course Catalog</Menu.Item>
-                    <Menu.Item key="2">Course Categories</Menu.Item>
-                    <Menu.Item key="3">Learning Pathways</Menu.Item>
+                    {
+                        items.map(item => {
+                            return (
+                                <Menu.Item key={item.key}>{item.txt}</Menu.Item>
+                            )
+                        })
+                    }
+
                     <Menu.Item key="4">
                         <Search placeholder="course code / keywords " allowClear onSearch={onSearch} style={{ width: 300, marginTop: 18 }} />
                     </Menu.Item>
+
                 </Menu>
 
             </Header>
